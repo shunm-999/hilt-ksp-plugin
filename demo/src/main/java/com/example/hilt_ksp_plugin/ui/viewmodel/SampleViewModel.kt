@@ -9,4 +9,8 @@ import javax.inject.Inject
 class SampleViewModel @Inject constructor(
     private val injectTarget: InjectTarget
 ) : ViewModel() {
+
+    fun doSomething() {
+        injectTarget.doSomething()
+    }
 }

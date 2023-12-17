@@ -63,7 +63,7 @@ object AndroidComponentMatcher {
     ): MatchResult? {
         return when (superClassQualifiedName) {
             "android.app.Application" -> MatchResult.Application(declaration)
-            "android.app.Activity" -> MatchResult.Activity(declaration)
+            "androidx.activity.ComponentActivity" -> MatchResult.Activity(declaration)
             "androidx.fragment.app.Fragment" -> MatchResult.Fragment(declaration)
             "android.app.Service" -> MatchResult.Service(declaration)
             "androidx.lifecycle.ViewModel" -> MatchResult.ViewModel(declaration)
