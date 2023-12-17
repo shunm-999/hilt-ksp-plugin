@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "HiltKspPlugin"
 include(":demo")
- 
+include(":hilt-validator")
