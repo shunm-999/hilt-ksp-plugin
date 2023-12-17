@@ -1,11 +1,8 @@
-import org.jetbrains.kotlin.fir.declarations.builder.buildTypeAlias
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
-    id("com.google.devtools.ksp") version "1.9.21-1.0.15"
-    kotlin("kapt")
 }
 
 android {
@@ -68,7 +65,7 @@ dependencies {
     implementation("androidx.compose.material3:material3")
 
     implementation("com.google.dagger:hilt-android:2.49")
-    kapt("com.google.dagger:hilt-compiler:2.49")
+    ksp("com.google.dagger:hilt-android-compiler:2.48")
 
     implementation(kotlin("stdlib-jdk8"))
     debugImplementation(project(":hilt-validator", "debug"))
@@ -83,9 +80,4 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-}
-
-fun findVariant(): String {
-    // プロジェクトプロパティからビルドバリアントを取得
-    return project.properties["buildVariant"]?.toString() ?: "default" // デフォルト値
 }
