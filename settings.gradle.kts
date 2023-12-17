@@ -14,5 +14,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "HiltKspPlugin"
-include(":app")
+include(":demo")
  
