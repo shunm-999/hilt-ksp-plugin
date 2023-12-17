@@ -68,10 +68,8 @@ dependencies {
     ksp("com.google.dagger:hilt-android-compiler:2.48")
 
     implementation(kotlin("stdlib-jdk8"))
-    debugImplementation(project(":hilt-validator", "debug"))
-    kspDebug(project(":hilt-validator", "debug"))
-    releaseImplementation(project(":hilt-validator", "release"))
-    kspRelease(project(":hilt-validator", "release"))
+    implementation(project(":hilt-validator"))
+    ksp(project(":hilt-validator"))
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
