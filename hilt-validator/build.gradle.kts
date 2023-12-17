@@ -1,5 +1,6 @@
 plugins {
     id("com.android.library")
+    id("org.jetbrains.kotlin.android")
     id("com.google.dagger.hilt.android")
     id("com.google.devtools.ksp") version "1.9.21-1.0.15"
 }
@@ -14,10 +15,14 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
+    configurations {
+        create("debug")
+        create("release")
+    }
 
     buildTypes {
         debug {
-            isMinifyEnabled = false
+
         }
         release {
             isMinifyEnabled = false
@@ -30,6 +35,9 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 
